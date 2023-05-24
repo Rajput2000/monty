@@ -12,6 +12,12 @@ int exe(char *content, stack_t **stack, unsigned int freq, FILE *data)
 	instruction_t opst[] = {
 		{"push", c_push},
 		{"pall", c_pall},
+		{"pint", c_pint},
+		{"pop", c_pop},
+		{"swap", c_swap},
+		{"add", c_add},
+		{"nop", c_nop},
+		{NULL, NULL}
 	};
 	unsigned int i = 0;
 	char *op;
