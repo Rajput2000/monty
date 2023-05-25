@@ -17,6 +17,7 @@ int exe(char *content, stack_t **stack, unsigned int freq, FILE *data)
 		{"swap", c_swap},
 		{"add", c_add},
 		{"nop", c_nop},
+		{"queue", c_queue},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
