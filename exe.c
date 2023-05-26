@@ -27,8 +27,7 @@ int exe(char *content, stack_t **stack, unsigned int freq, FILE *data)
 		{"rotr", f_rotr},
 		{"sub", f_sub},
 		{"stack", f_stack},
-		{NULL, NULL}
-	};
+		{NULL, NULL}	};
 	unsigned int i = 0;
 	char *op;
 
@@ -40,10 +39,8 @@ int exe(char *content, stack_t **stack, unsigned int freq, FILE *data)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
 		{	opst[i].f(stack, freq);
-			return (0);
-		}
-		i++;
-	}
+			return (0);		}
+		i++;	}
 	if (op && opst[i].opcode == NULL)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", freq, op);
 		fclose(data);
