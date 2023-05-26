@@ -14,7 +14,8 @@ void add_node(stack_t **head, int n)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{ printf("Error\n");
-		exit(0); }
+		exit(0);
+	}
 	if (aux)
 		aux->prev = new_node;
 	new_node->n = n;
@@ -76,6 +77,27 @@ void free_stack(stack_t *head)
 }
 
 /**
+ * c_pall - prints the stack
+ * @head: stack head
+ * @count: no used
+ * Return: no return
+*/
+void c_pall(stack_t **head, unsigned int count)
+{
+	stack_t *h;
+	(void)count;
+
+	h = *head;
+	if (h == NULL)
+		return;
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+	}
+}
+
+/**
  * c_push - add node to the stack
  * @head: stack head
  * @count: line_number
@@ -110,25 +132,4 @@ void c_push(stack_t **head, unsigned int count)
 		add_node(head, n);
 	else
 		add_queue(head, n);
-}
-
-/**
- * c_pall - prints the stack
- * @head: stack head
- * @count: no used
- * Return: no return
-*/
-void c_pall(stack_t **head, unsigned int count)
-{
-	stack_t *h;
-	(void)count;
-
-	h = *head;
-	if (h == NULL)
-		return;
-	while (h)
-	{
-		printf("%d\n", h->n);
-		h = h->next;
-	}
 }
